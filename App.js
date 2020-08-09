@@ -1,6 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack'
@@ -10,6 +8,7 @@ import { Icon } from 'react-native-elements'
 import HomeScreen from './src/screens/HomeScreen.js'
 import ScanScreen from './src/screens/ScanScreen.js'
 import ProductScreen from './src/screens/ProductScreen.js'
+import HistoryScreen from './src/screens/HistoryScreen.js'
 
 
 const Tab = createBottomTabNavigator()
@@ -34,6 +33,14 @@ export default function App() {
                   options={{
                       tabBarLabels: 'Bienvenue !',
                       tabBarIcon: () => <Icon name="home" type="font-awesome" size={32} />
+                  }}
+              />
+              <Tab.Screen
+                  name="History"
+                  component={HistoryScreen}
+                  options={{
+                      tabBarLabels: 'History',
+                      tabBarIcon: () => <Icon name="history" type="font-awesome" size={32} />
                   }}
               />
               <Tab.Screen
